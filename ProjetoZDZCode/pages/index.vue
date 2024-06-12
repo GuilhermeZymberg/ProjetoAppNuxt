@@ -188,9 +188,6 @@
       search: '',
       dialog: false,
       dialogDelete: false,
-      emailRules: [ 
-        v => !v || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
-      ],
       headers: [
         {
           title: 'Artistas',
@@ -301,20 +298,20 @@
         } else {
           this.artistas.push(this.editedItem)
         }
-        this.close()
+        
         try{
-        var response = await $fetch('https://localhost:7210/api/Artista',{
+        var response = await $fetch('https://localhost:7210/api/Artistas',{
           method: "POST",
           headers: {
           'Content-Type': 'application/json',
           },
-          body: this.artistas,
+          body: this.editedItem,
         })
         console.log("yo")
       }
       catch{}
       try{
-        var responseGet = await $fetch('https://localhost:7210/api/Artista',{
+        var responseGet = await $fetch('https://localhost:7210/api/Artistas',{
           method: "GET",
         })
         this.artistas = responseGet
@@ -322,7 +319,7 @@
         console.log("yo2")
       }
       catch{}
-        
+      this.close()
       },
     },
   }
