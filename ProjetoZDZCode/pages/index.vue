@@ -22,7 +22,7 @@
   <v-data-table v-model:search="search"
     :headers="headers"
     :items="artistas"
-    :sort-by="[{ key: 'nome', order: 'asc' }]"
+    :sort-by="[{ key: 'id', order: 'asc' }]"
   >
     <template v-slot:top>
       <v-toolbar
@@ -77,17 +77,21 @@
                     </v-text-field>
                     
                   </v-col>
-                  <v-col
+                  
+                  <!-- Html Comments<v-col
                     cols="12"
                     md="4"
                     sm="6"
                   >
-                    <v-text-field
-                      v-model="editedItem.image"
+                    <v-file-input
+                      @change="getFileObject($event)"
+                      :rules="rules"
+                      accept="image/png, image/jpeg, image/bmp"
                       label="Image"
-                      required
-                    ></v-text-field>
-                  </v-col>
+                      placeholder="Pick an avatar"
+                      prepend-icon="mdi-camera"
+                    ></v-file-input>
+                  </v-col>/-->
                   <v-col
                     cols="12"
                     md="4"
@@ -108,6 +112,17 @@
                     <v-text-field
                       v-model="editedItem.password"
                       label="Password"
+                      required
+                    ></v-text-field>
+                  </v-col>
+                  <v-col
+                    cols="12"
+                    md="4"
+                    sm="6"
+                  >
+                    <v-text-field
+                      v-model="editedItem.image"
+                      label="Image"
                       required
                     ></v-text-field>
                   </v-col>
@@ -169,12 +184,7 @@
       </v-icon>
     </template>
     <template v-slot:no-data>
-      <v-btn
-        color="primary"
-        @click="initialize"
-      >
-        Reset
-      </v-btn>
+      <p>Adiciona Um Item!</p>
     </template>
   </v-data-table>
   <NuxtPage />
@@ -182,6 +192,11 @@
 <script>
   export default {
     data: () => ({
+      rules: [
+        value => {
+          return !value || !value.length || value[0].size < 2000000 || 'Avatar size should be less than 2 MB!'
+        },
+      ],
       emailRules: [ 
         v => !v ||/^[^\s@]+@[^\s@]+$/.test(v)  || 'E-mail must be valid'
         ],
@@ -189,16 +204,16 @@
       dialog: false,
       dialogDelete: false,
       headers: [
+        { title: 'UserID', key: 'id' },
         {
           title: 'Artistas',
           align: 'start',
           sortable: false,
           key: 'name',
         },
-        { title: 'UserID', key: 'id' },
-        { title: 'Imagem', key: 'image' },
         { title: 'E-mail', key: 'email' },
         { title: 'SenhaHash', key: 'password' },
+        { title: 'Imagem', key: 'image' },
         { title: 'Actions', key: 'actions', sortable: false },
         
       ],
@@ -206,19 +221,18 @@
       editedIndex: -1,
       editedItem: {
         name: 'nome',
-        image: '/joia.jpg',
         email: "conta@gmail.com",
-        
-        password: 0,
+        password: '0',
+        image: '/joia.jpg',
       },
       defaultItem: {
         name: 'a',
-        image: '/joia.jpg',
         email: "a@gmail.com",
-        password: 0,
+        password: '123',
+        image: '/joia.jpg',
       },
     }),
-
+    
     computed: {
       formTitle () {
         return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
@@ -240,26 +254,15 @@
 
     methods: {
       initialize () {
-        this.artistas = [
-          {
-            name: 'Frank Ocean',
-            id: 1,
-            image: "/joia.jpg",
-            email: 'ocean@gmail.com',
-            password: 'saouhd19h2dkaijshdasd',
-          },
-          {
-            name: 'Tyler',
-            id: 2,
-            image: "/joia.jpg",
-            email: 'creator@gmail.com',
-            password: 'sdasdijaspoidjapiosuhjclkzjxbnc1123124asdzxc',
-          },
-        ]
+        this.artistas = []
       },
- 
-      editItem (item) {
-        this.editedIndex = this.artistas.indexOf(item)
+      /*async getFileObject(files){
+        this.fileObj = await files
+        console.log(this.fileObj)
+      },*/
+      async editItem (item) {
+        console.log(this.artistas[this.artistas.indexOf(item)].id)
+        this.editedIndex = this.artistas[this.artistas.indexOf(item)].id-1
         this.editedItem = Object.assign({}, item)
         this.dialog = true
       },
@@ -270,12 +273,29 @@
         this.dialogDelete = true
       },
 
-      deleteItemConfirm () {
-        this.artistas.splice(this.editedIndex, 1)
+      async deleteItemConfirm () {
+        console.log('que')
+        var url = 'https://localhost:7210/api/Artistas/'+(this.editedItem.id)
+        try{
+        var response = await $fetch(url,{
+          method: "DELETE",
+        })
+        }
+      catch{}
+      try{
+        var responseGet = await $fetch('https://localhost:7210/api/Artistas',{
+          method: "GET",
+        })
+        this.artistas = responseGet
+        console.log(responseGet.data)
+        console.log("del2")
+      }
+      catch{}
         this.closeDelete()
       },
 
       close () {
+        this.editedIndex = -1
         this.dialog = false
         this.$nextTick(() => {
           this.editedItem = Object.assign({}, this.defaultItem)
@@ -292,13 +312,18 @@
       },
 
       async save () {
-        this.editedItem.id = this.artistas[this.artistas.length-1].id + 1
+        
         if (this.editedIndex > -1) {
+          this.editedItem.id = this.editedIndex+1
           Object.assign(this.artistas[this.editedIndex], this.editedItem)
-        } else {
+        } else if(this.artistas.length != 0) {
+          this.editedItem.id = this.artistas.length+1
+          this.artistas.push(this.editedItem)
+        }else{
+          this.editedItem.id = 1
           this.artistas.push(this.editedItem)
         }
-        
+        console.log(this.artistas)
         try{
         var response = await $fetch('https://localhost:7210/api/Artistas',{
           method: "POST",
@@ -308,13 +333,14 @@
           body: this.editedItem,
         })
         console.log("yo")
-      }
+        }
       catch{}
       try{
         var responseGet = await $fetch('https://localhost:7210/api/Artistas',{
           method: "GET",
         })
         this.artistas = responseGet
+        console.log(this.artistas)
         console.log(responseGet.data)
         console.log("yo2")
       }
