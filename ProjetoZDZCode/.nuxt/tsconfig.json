@@ -84,7 +84,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/142affb1-189e-44e7-a3cf-e915b460a51b.json"
+        "./manifest/meta/dev"
       ],
       "#build": [
         "."
@@ -119,6 +119,7 @@
     "./nuxt.d.ts",
     "../.config/nuxt.*",
     "../**/*",
+    "../node_modules/vuetify-nuxt-module/runtime",
     "../node_modules/@nuxt/devtools/runtime",
     "../node_modules/@nuxt/telemetry/runtime",
     ".."
@@ -127,6 +128,7 @@
     "../node_modules",
     "../../node_modules",
     "../node_modules/nuxt/node_modules",
+    "../node_modules/vuetify-nuxt-module/runtime/server",
     "../node_modules/@nuxt/devtools/runtime/server",
     "../node_modules/@nuxt/telemetry/runtime/server",
     "../dist",

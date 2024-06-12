@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\MICRO\\Desktop\\ttt\\ProjetoZDZCode\\API\\API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ABE52F83-A1FC-4B68-BA2A-47D84B539648}|API\\API.csproj|c:\\users\\micro\\desktop\\ttt\\projetozdzcode\\api\\api\\api\\controllers\\artistacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABE52F83-A1FC-4B68-BA2A-47D84B539648}|API\\API.csproj|solutionrelative:api\\controllers\\artistacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABE52F83-A1FC-4B68-BA2A-47D84B539648}|API\\API.csproj|c:\\users\\micro\\desktop\\ttt\\projetozdzcode\\api\\api\\api\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABE52F83-A1FC-4B68-BA2A-47D84B539648}|API\\API.csproj|solutionrelative:api\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABE52F83-A1FC-4B68-BA2A-47D84B539648}|API\\API.csproj|c:\\users\\micro\\desktop\\ttt\\projetozdzcode\\api\\api\\api\\models\\efdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABE52F83-A1FC-4B68-BA2A-47D84B539648}|API\\API.csproj|solutionrelative:api\\models\\efdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABE52F83-A1FC-4B68-BA2A-47D84B539648}|API\\API.csproj|c:\\users\\micro\\desktop\\ttt\\projetozdzcode\\api\\api\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABE52F83-A1FC-4B68-BA2A-47D84B539648}|API\\API.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABE52F83-A1FC-4B68-BA2A-47D84B539648}|API\\API.csproj|c:\\users\\micro\\desktop\\ttt\\projetozdzcode\\api\\api\\api\\models\\artista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABE52F83-A1FC-4B68-BA2A-47D84B539648}|API\\API.csproj|solutionrelative:api\\models\\artista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABE52F83-A1FC-4B68-BA2A-47D84B539648}|API\\API.csproj|c:\\users\\micro\\desktop\\ttt\\projetozdzcode\\api\\api\\api\\api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{ABE52F83-A1FC-4B68-BA2A-47D84B539648}|API\\API.csproj|solutionrelative:api\\api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "API",
+              "DocumentMoniker": "C:\\Users\\MICRO\\Desktop\\ttt\\ProjetoZDZCode\\API\\API\\API\\API.csproj",
+              "RelativeDocumentMoniker": "API\\API.csproj",
+              "ToolTip": "C:\\Users\\MICRO\\Desktop\\ttt\\ProjetoZDZCode\\API\\API\\API\\API.csproj",
+              "RelativeToolTip": "API\\API.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-11T17:48:34.267Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\MICRO\\Desktop\\ttt\\ProjetoZDZCode\\API\\API\\API\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "API\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\MICRO\\Desktop\\ttt\\ProjetoZDZCode\\API\\API\\API\\WeatherForecast.cs",
+              "RelativeToolTip": "API\\WeatherForecast.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T21:05:44.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EFDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\MICRO\\Desktop\\ttt\\ProjetoZDZCode\\API\\API\\API\\Models\\EFDBContext.cs",
+              "RelativeDocumentMoniker": "API\\Models\\EFDBContext.cs",
+              "ToolTip": "C:\\Users\\MICRO\\Desktop\\ttt\\ProjetoZDZCode\\API\\API\\API\\Models\\EFDBContext.cs",
+              "RelativeToolTip": "API\\Models\\EFDBContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T19:52:08.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\MICRO\\Desktop\\ttt\\ProjetoZDZCode\\API\\API\\API\\Program.cs",
+              "RelativeDocumentMoniker": "API\\Program.cs",
+              "ToolTip": "C:\\Users\\MICRO\\Desktop\\ttt\\ProjetoZDZCode\\API\\API\\API\\Program.cs",
+              "RelativeToolTip": "API\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T19:34:48.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ArtistaController.cs",
+              "DocumentMoniker": "C:\\Users\\MICRO\\Desktop\\ttt\\ProjetoZDZCode\\API\\API\\API\\Controllers\\ArtistaController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\ArtistaController.cs",
+              "ToolTip": "C:\\Users\\MICRO\\Desktop\\ttt\\ProjetoZDZCode\\API\\API\\API\\Controllers\\ArtistaController.cs",
+              "RelativeToolTip": "API\\Controllers\\ArtistaController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABUAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T18:23:27.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Artista.cs",
+              "DocumentMoniker": "C:\\Users\\MICRO\\Desktop\\ttt\\ProjetoZDZCode\\API\\API\\API\\Models\\Artista.cs",
+              "RelativeDocumentMoniker": "API\\Models\\Artista.cs",
+              "ToolTip": "C:\\Users\\MICRO\\Desktop\\ttt\\ProjetoZDZCode\\API\\API\\API\\Models\\Artista.cs",
+              "RelativeToolTip": "API\\Models\\Artista.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T17:50:01.392Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
