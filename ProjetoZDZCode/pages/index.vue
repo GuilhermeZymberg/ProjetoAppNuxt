@@ -296,20 +296,25 @@
 
       async save () {
         this.editedItem.id = this.artistas[this.artistas.length-1].id + 1
-        this.artistas.push(this.editedItem)
+        if (this.editedIndex > -1) {
+          Object.assign(this.artistas[this.editedIndex], this.editedItem)
+        } else {
+          this.artistas.push(this.editedItem)
+        }
+        this.close()
         try{
-        var response = await $fetch('https://localhost:7210/Artista',{
+        var response = await $fetch('https://localhost:7210/api/Artista',{
           method: "POST",
           headers: {
           'Content-Type': 'application/json',
           },
-          body: this.artistas ,
+          body: this.artistas,
         })
         console.log("yo")
       }
       catch{}
       try{
-        var responseGet = await $fetch('https://localhost:7210/Artista',{
+        var responseGet = await $fetch('https://localhost:7210/api/Artista',{
           method: "GET",
         })
         this.artistas = responseGet
@@ -317,12 +322,7 @@
         console.log("yo2")
       }
       catch{}
-        if (this.editedIndex > -1) {
-          Object.assign(this.artistas[this.editedIndex], this.editedItem)
-        } else {
-          this.artistas.push(this.editedItem)
-        }
-        this.close()
+        
       },
     },
   }
